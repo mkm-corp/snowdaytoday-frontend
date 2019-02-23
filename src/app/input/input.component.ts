@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-input',
@@ -6,14 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./input.component.scss']
 })
 export class InputComponent implements OnInit {
-
-  constructor() { }
+  location
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  onClick() {
-    
+  onSubmit(value: string) {
+    this.router.navigate(["/"+value])
   }
 
 }

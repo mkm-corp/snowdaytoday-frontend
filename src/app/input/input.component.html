@@ -1,9 +1,9 @@
-<div class="mt-5">
-  <label for="basic-url">Check your location:</label>
+<div class="container pb-4 pt-2 mt-5 bg-gradient-warm" style="border-radius: 0.5em">
+  <label for="basic-url" class="font">Check your location:</label>
   <div class="input-group">
-    <input type="text" class="form-control" placeholder="Postal code, city, town, etc..." aria-label="Postal code, city, town, etc..." aria-describedby="input-location">
+    <input type="text" class="form-control" placeholder="Postal code, city, town, etc..." aria-label="Postal code, city, town, etc..." aria-describedby="input-location" #box (keyup.enter)="onSubmit(box.value)" autofocus>
     <div class="input-group-append">
-      <button class="btn btn-secondary" type="button" id="button-location" (click)="onClick()">Check</button>
+      <a routerLink="{{box.value}}"><button class="btn btn-secondary" type="button" id="button-location">Check</button></a>
     </div>
   </div>
 </div>

@@ -1,24 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Input } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PercentageComponent } from './percentage/percentage.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { InputComponent } from './input/input.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
+const appRoutes = [
+  {path: "", component: InputComponent},
+  {path: ":location", component: PercentageComponent, data: {animation: 'routeAnimations'}}
+]
 @NgModule({
   declarations: [
     AppComponent,
     PercentageComponent,
-    InputComponent
+    InputComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
+    HttpClientModule,
+    RouterModule.forRoot(
+      appRoutes
+    )
   ],
-  
+
   providers: [],
   bootstrap: [AppComponent]
 })

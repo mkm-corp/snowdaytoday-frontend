@@ -6,10 +6,12 @@
 <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-<div class="container mt-3" style="color:rgb(233, 233, 233)" [@fadeIn]="fadeIn">
+<div class="container mt-3" [@fadeIn]="fadeIn">
   <h1 class="font">snowday.today</h1>
   <h3 class="font-thin">Predict snowdays in your area!</h3>
-  <app-input></app-input>
+  <div [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+  <p class="font m-5 text-center">snowday predictor, predict snowdays, chance of snowday, snowdays, is it a snowday</p>
 </div>
 
-<router-outlet></router-outlet>
