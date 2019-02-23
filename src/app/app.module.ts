@@ -3,15 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PercentageComponent } from './percentage/percentage.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PercentageComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule 
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
