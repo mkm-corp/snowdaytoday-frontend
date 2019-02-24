@@ -10,14 +10,13 @@ export class ApiService {
 
   }
   getValue(loc: string) {
-    console.log(loc)
-    const params = new HttpParams().set("loc", loc)
-    var r = this.http.get<APIResponse>(this.url, {params})
-    console.log(r)
+    var r = this.http.get<APIResponse>(this.url+"/loc")
     return r
   }
 }
 
 export interface APIResponse {
-  chance: number
+  chance: number,
+  date: Date
+  error: String
 }
