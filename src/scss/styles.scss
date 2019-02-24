@@ -1,0 +1,61 @@
+@import './variables';
+@import './mixins';
+@import "~bourbon/app/assets/stylesheets/bourbon";
+
+html, body, .full-screen {
+  height: 100%;
+  width: 100%;
+}
+.full-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-weight: 800;
+  color: #fff;
+  font-size: 72px;
+}
+.container {
+  padding: 0 1rem;
+  width: 30%;
+}
+.inputField {
+  width: 3em
+}
+
+.background {
+  transition: background 1s linear;
+}
+.font {
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  color: white;
+}
+
+.font-thin {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: white;
+}
+
+.font-small {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.5em
+}
+
+.font-placeholder {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.success-gradient {
+  // @include gradient-animation(#09e485, #000066, 20s)
+  @include gradient-animate(125deg, 20s, (#09e485, #0291e3, #0000e6));
+}
+
+.error-gradient {
+  // @include gradient-animation(#09e485, #000066, 20s)
+  @include gradient-animate(125deg, 20s, (rgb(248, 82, 102), #FD803F, #F2CD48));
+}
+

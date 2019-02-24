@@ -10,7 +10,7 @@ export class ApiService {
 
   }
   getValue(loc: string) {
-    var r = this.http.get<APIResponse>(this.url+"/loc")
+    var r = this.http.get<APIResponse>(this.url+"/"+loc)
     return r
   }
 }
@@ -18,5 +18,5 @@ export class ApiService {
 export interface APIResponse {
   chance: number,
   date: Date
-  error: String
+  error: string
 }

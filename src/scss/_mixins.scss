@@ -1,0 +1,73 @@
+@import "variables";
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@mixin gradient-animate($direction, $duration, $colors){
+$size: length($colors) * 200%;  
+background: linear-gradient($direction, $colors);
+background-size: $size $size;
+
+  @include keyframes(gradient-animate){
+    0%{background-position: 0% 0%}
+    50%{background-position: 100% 100%}
+    100%{background-position:0% 0%}
+  };
+  
+  @include animation(gradient-animate $duration linear infinite);
+}
+
+
+
+// Gradient backgrounds
+@mixin bg-gradient($parent, $gradient) {
+    #{$parent} {
+      background: $gradient;
+    }
+  }
+  
+  // Gradient text
+  @mixin text-gradient($parent, $gradient) {
+    #{$parent} {
+      background-image: $gradient;
+      color:transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+  
+  // Gradient text
+  @mixin text-gradient($parent, $gradient) {
+    #{$parent} {
+      background-image: $gradient;
+      color:transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+
+// Gradient Classes 
+@each $gradient, $value in $gradients {
+    @include bg-gradient(".bg-gradient-#{$gradient}", $value);
+   }
+   
+   // Gradient Classes 
+   @each $gradient, $value in $gradients {
+    @include text-gradient(".text-gradient-#{$gradient}", $value);
+   }
+
+@mixin text-gradient($parent, $gradient) {
+  #{$parent} {
+    background-image: $gradient;
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+@mixin border-gradient($parent, $gradient) {
+  #{$parent} {
+    border: 20px solid transparent;
+    border-width: 6px;
+    border-style: solid;
+    border-image: $gradient;
+    border-image-slice: 1;
+  }
+}

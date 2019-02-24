@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
+    "bourbon": "^4.3.4",
     "core-js": "^2.5.4",
     "ng-animate": "^0.3.4",
     "ng-animations": "^2.0.0",

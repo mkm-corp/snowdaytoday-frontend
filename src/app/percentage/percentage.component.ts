@@ -12,10 +12,16 @@ import { fadeIn } from 'ng-animate';
 })
 export class PercentageComponent implements OnInit {
   percentage: number
+  error: string
   constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router) {
   }
   showValue(loc: string) {
-    this.apiService.getValue(loc).subscribe((data: APIResponse) => {this.percentage = data.chance})
+    this.apiService.getValue(loc).subscribe((data: APIResponse) => {
+      this.percentage = data.chance
+      if (data.error) {
+        this.error = data.error
+      }
+    })
   }
   ngOnInit() { 
     this.showValue(this.route.snapshot.params.location)
