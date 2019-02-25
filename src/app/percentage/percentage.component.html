@@ -1,9 +1,17 @@
-<div *ngIf="error == 'not found'; else successBlock" class="mt-5 p-3 error-gradient" style="border-radius: 0.5em">
+<div *ngIf="error == 'not found'; else weekendBlock" class="mt-5 p-3 error-gradient" style="border-radius: 0.5em">
     <h4>Could not find that location!</h4>
     <h5>Try again with a different location. Think this is an error? Contact us on Twitter at @TodaySnowday</h5>
     <hr>
     <h6>{{dateString}}</h6>
 </div>
+<ng-template #weekendBlock>
+    <div *ngIf="error == 'weekend'; else successBlock" class="mt-5 p-3 error-gradient" style="border-radius: 0.5em">
+        <h4>It's a weekend!</h4>
+        <h5>Enjoy your day off, and come back later!</h5>
+        <hr>
+        <h6>{{dateString}}</h6>
+    </div>
+</ng-template>
 <ng-template #successBlock>
     <div class="mt-5 p-3 success-gradient" style="border-radius:0.5em">
         <h4>Predicting a </h4><h1>{{percentage}}%</h1><h3>chance of snowday in your area...</h3>
