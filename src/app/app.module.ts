@@ -8,6 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { InputComponent } from './input/input.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { NavComponent } from './nav/nav.component';
 
 const appRoutes = [
   {path: "", component: InputComponent},
@@ -18,6 +19,7 @@ const appRoutes = [
     AppComponent,
     PercentageComponent,
     InputComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
