@@ -59,3 +59,6 @@ html, body, .full-screen {
   @include gradient-animate(125deg, 20s, (rgb(248, 82, 102), #FD803F, #F2CD48));
 }
 
+.background-gradient {
+  @include gradient-animate(125deg, 30s, (#0291e3, #0000e6, #8019C6, #000066))
+}
