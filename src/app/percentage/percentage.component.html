@@ -1,9 +1,15 @@
-<div *ngIf="error == 'not found'; else weekendBlock" class="mt-5 p-3 error-gradient" style="border-radius: 0.5em">
-    <h4>Could not find that location!</h4>
-    <h5>Try again with a different location. Think this is an error? Contact us on Twitter at @TodaySnowday</h5>
-    <hr>
-    <h6>{{dateString}}</h6>
+<div *ngIf="!dateString; else errorBlock" class="mt-5 p-3 error-gradient" style="border-radius: 0.5em">
+    <h4>Loading...</h4>
+    <h5>Please wait.</h5>
 </div>
+<ng-template #errorBlock>
+    <div *ngIf="error == 'not found'; else weekendBlock" class="mt-5 p-3 error-gradient" style="border-radius: 0.5em">
+        <h4>Could not find that location!</h4>
+        <h5>Try again with a different location. Think this is an error? Contact us on Twitter at @TodaySnowday</h5>
+        <hr>
+        <h6>{{dateString}}</h6>
+    </div>
+</ng-template>
 <ng-template #weekendBlock>
     <div *ngIf="error == 'weekend'; else successBlock" class="mt-5 p-3 error-gradient" style="border-radius: 0.5em">
         <h4>It's a weekend!</h4>
