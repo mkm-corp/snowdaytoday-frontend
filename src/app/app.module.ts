@@ -9,10 +9,14 @@ import { InputComponent } from './input/input.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { AboutComponent } from './about/about.component';
 
 const appRoutes = [
   {path: "", component: InputComponent},
-  {path: ":location", component: PercentageComponent, data: {animation: 'routeAnimations'}}
+  {path: "chance/:location", component: PercentageComponent, data: {animation: 'routeAnimations'}},
+  {path: "about", component: AboutComponent},
+  {path: "*", component: NotfoundComponent}
 ]
 @NgModule({
   declarations: [
@@ -20,6 +24,8 @@ const appRoutes = [
     PercentageComponent,
     InputComponent,
     NavComponent,
+    NotfoundComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

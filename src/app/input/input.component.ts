@@ -14,7 +14,7 @@ export class InputComponent implements OnInit {
   }
 
   onSubmit(value: string) {
-    this.router.navigate(["/"+value])
+    this.router.navigate(["/chance/"+value])
   }
 
 }

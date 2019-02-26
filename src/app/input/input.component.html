@@ -3,7 +3,7 @@
   <div class="input-group">
     <input type="text" class="form-control font" placeholder="Postal code, city, town, etc..." aria-label="Postal code, city, town, etc..." aria-describedby="input-location" #box (keyup.enter)="onSubmit(box.value)" autofocus>
     <div class="input-group-append">
-      <a routerLink="{{box.value}}"><button class="btn btn-secondary" type="button" id="button-location">Check</button></a>
+      <a routerLink="chance/{{box.value}}"><button class="btn btn-secondary" type="button" id="button-location">Check</button></a>
     </div>
   </div>
 </div>

@@ -33,13 +33,6 @@ html, body, .full-screen {
   color: white;
 }
 
-.font-thin {
-  font-family: Montserrat, sans-serif;
-  font-weight: 700;
-  font-style: italic;
-  color: white;
-}
-
 .font-small {
   font-family: Montserrat, sans-serif;
   font-size: 1.2em
@@ -51,7 +44,7 @@ html, body, .full-screen {
 
 .success-gradient {
   // @include gradient-animation(#09e485, #000066, 20s)
-  @include gradient-animate(125deg, 20s, (#09e485, #0291e3, #0000e6));
+  @include gradient-animate(125deg, 20s, (#09e485, #0291e3, #3f3feb));
 }
 
 .error-gradient {
@@ -60,5 +53,5 @@ html, body, .full-screen {
 }
 
 .background-gradient {
-  @include gradient-animate(125deg, 30s, (#0291e3, #0000e6, #8019C6, #000066))
+  @include gradient-animate(125deg, 30s, (#0291e3, #0000e6, #000066))
 }
